@@ -1,0 +1,43 @@
+# Windows and macOS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Obsidian machine-specific session state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.trash/
+
+# Temporary and log files
+*.tmp
+*.temp
+*.log
+~$*
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.*
+
+# Papers and large archives are managed outside this Git repository
+*.pdf
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Model weights and large experiment artifacts
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.npy
+*.npz
+*.h5
+*.hdf5
