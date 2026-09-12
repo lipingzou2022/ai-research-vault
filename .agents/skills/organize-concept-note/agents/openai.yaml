@@ -1,0 +1,6 @@
+interface:
+  display_name: "整理概念笔记"
+  short_description: "将ChatGPT知识点讨论增量整理为Obsidian概念笔记"
+  default_prompt: "使用 $organize-concept-note 把下面的 ChatGPT 知识点讨论总结整理进科研知识库。"
+policy:
+  allow_implicit_invocation: true

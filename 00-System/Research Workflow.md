@@ -1,6 +1,6 @@
 ---
 type: system
-version: 0.2
+version: 0.3
 created: 2026-09-03
 updated: 2026-09-04
 ---
@@ -13,6 +13,7 @@ updated: 2026-09-04
 
 ```text
 Zotero → ChatGPT总结 → Codex整理 → Obsidian知识网络
+知识点疑惑 → ChatGPT总结 → Codex概念笔记 → Obsidian概念网络
 Git项目 → Codex诊断与实验 → Obsidian证据记录
 ```
 
@@ -32,6 +33,16 @@ Git项目 → Codex诊断与实验 → Obsidian证据记录
 4. idea：研究想法
 5. reproduction：复现项目
 6. experiment：实验记录
+
+## 知识点讨论入口
+
+用户与 ChatGPT 围绕可跨论文复用的知识点进行讨论后，由 ChatGPT输出普通的“知识点学习总结”，再由项目级 `$organize-concept-note` Skill整理为 `concept` 笔记。
+
+- 用户不需要手工编写 YAML，也不需要每次重复工作流提示词。
+- 总结应保留用户的原始疑惑、理解变化、误解修正、尚未理解和自我检查。
+- ChatGPT解释属于 AI 辅助理解，不自动等同于论文、教材或官方资料证据。
+- 已有概念必须增量更新；创建多个子概念、合并拆分或确定标准名需要用户确认。
+- 一篇论文独有的方法写入 `literature`，代码实现写入 `reproduction`，具体实验写入 `experiment`，新研究假设写入 `idea`。
 
 ## 写入与更新规则
 

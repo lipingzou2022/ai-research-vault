@@ -1,6 +1,6 @@
 ---
 type: system
-version: 0.1
+version: 0.2
 created: 2026-09-04
 updated: 2026-09-04
 ---
@@ -22,6 +22,12 @@ Zotero论文
 → Codex结构化整理
 → Obsidian知识网络
 
+知识点疑惑
+→ ChatGPT导师式讨论
+→ 知识点学习总结
+→ Codex概念笔记整理
+→ Obsidian概念网络
+
 论文代码
 → Codex项目诊断
 → Context Packet
@@ -36,6 +42,7 @@ Zotero论文
 - [[YAML Dictionary]]：六类笔记的固定字段与状态值
 - [[Naming Rules]]：文件名、稳定编号和重命名规则
 - [[Templates/Literature Note|Literature Note 模板]]：论文笔记模板
+- [[Templates/Concept Note|Concept Note 模板]]：概念笔记模板
 
 ## 六类知识对象
 
@@ -75,12 +82,28 @@ Codex执行：
 6. 汇总需要用户确认的语义链接、概念变更和地图调整；
 7. 用户检查后更新 `note_status`。
 
+## 知识点讨论的标准入口
+
+用户与 ChatGPT 讨论 Transformer、Self-Attention、B-rep 等可跨论文复用的知识点后，只需提供知识点名称和 ChatGPT总结，并说“整理到知识库”或近义表达。
+
+项目级 `$organize-concept-note` Skill负责：
+
+1. 判断内容是否属于概念笔记；
+2. 检查已有主节点、aliases 和重复内容；
+3. 新建或增量更新 `02-Concepts` 中的笔记；
+4. 保留用户疑惑、理解变化、尚未理解和自我检查；
+5. 区分已验证来源与 AI 辅助解释；
+6. 建立确定性链接并汇总待确认关系。
+
+ChatGPT解释本身不自动视为论文证据。新笔记默认 `draft`、`seed`，由用户检查和确认成熟度。
+
 ## 新任务使用方式
 
 - 必须从“AI科研知识库”本地项目中创建 Codex 任务。
 - 一个任务尽量只对应一个明确成果，例如“一篇论文入库”“一次概念整理”或“一个复现项目诊断”。
 - 不必复制以前的全部聊天；先让 Codex读取本文件和相关笔记。
 - ChatGPT讨论可以留在相应的 ChatGPT 项目中，最终只需把 Research Note总结文本交给 Codex。
+- 知识点讨论不需要重复粘贴长提示词；自然语言触发 `$organize-concept-note` 即可。
 
 ## 当前里程碑
 
